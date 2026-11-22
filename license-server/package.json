@@ -1,0 +1,13 @@
+{
+  "name": "zjsu-license-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "钻酱SU 卡密验证服务端（零依赖）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

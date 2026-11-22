@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>钻酱SU 卡密后台</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.6 system-ui, "Microsoft YaHei", sans-serif; background: #0f1115; color: #e6e8ee; }
+  header { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #161a22; border-bottom: 1px solid #232936; position: sticky; top: 0; z-index: 5; }
+  header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+  .badge { font-size: 12px; color: #8ab4f8; border: 1px solid #2b4a7d; padding: 1px 8px; border-radius: 999px; }
+  main { max-width: 1180px; margin: 0 auto; padding: 18px 16px 60px; }
+  .card { background: #161a22; border: 1px solid #232936; border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
+  label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #98a2b3; }
+  input, select, button { font: inherit; }
+  input, select { background: #0f131a; border: 1px solid #2a3242; color: #e6e8ee; border-radius: 8px; padding: 8px 10px; min-width: 120px; }
+  input:focus, select:focus { outline: none; border-color: #4c7bd9; }
+  button { background: #2a6df4; border: 0; color: #fff; border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+  button.ghost { background: #202839; }
+  button.warn { background: #b4352f; }
+  button.small { padding: 4px 8px; font-size: 12px; }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid #222937; vertical-align: middle; font-size: 13px; }
+  th { color: #98a2b3; font-weight: 500; white-space: nowrap; }
+  code { font-family: ui-monospace, Consolas, monospace; color: #9ee6b8; font-size: 13px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; border: 1px solid transparent; }
+  .t-active { color: #7ee2a8; border-color: #2f7a52; background: #12251a; }
+  .t-issued { color: #8ab4f8; border-color: #2b4a7d; background: #131d2c; }
+  .t-expired { color: #f2b8b5; border-color: #7d3a35; background: #251413; }
+  .t-disabled { color: #c8a2ff; border-color: #5b3a8c; background: #1c1428; }
+  .muted { color: #7c8698; font-size: 12px; }
+  #toast { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%); background: #202839; border: 1px solid #33405a; padding: 10px 16px; border-radius: 10px; opacity: 0; transition: .2s; pointer-events: none; }
+  #toast.show { opacity: 1; }
+  #login { max-width: 380px; margin: 12vh auto; }
+  .hide { display: none !important; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+</style>
+</head>
+<body>
+<header>
+  <h1>钻酱SU · 卡密后台</h1>
+  <span class="badge" id="stat">未登录</span>
+  <span style="flex:1"></span>
+  <button class="ghost small hide" id="logout">退出登录</button>
+</header>
+
+<main>
+  <section class="card hide" id="login">
+    <h3 style="margin:0 0 10px">后台登录</h3>
+    <div class="row">
+      <label>管理密码 <input id="pwd" type="password" autocomplete="current-password" /></label>
+      <button id="loginBtn">登录</button>
+    </div>
+    <p class="muted">密码来自服务端 ADMIN_PASSWORD 环境变量。</p>
+  </section>
+
+  <div id="panel" class="hide">
+    <section class="card">
+      <div class="row">
+        <label>自定义卡密 <input id="f-code" placeholder="留空=随机生成" /></label>
+        <label>数量 <input id="f-count" type="number" min="1" max="200" value="1" style="min-width:80px" /></label>
+        <label>时长
+          <select id="f-dur">
+            <option value="86400">1 天</option>
+            <option value="259200">3 天</option>
+            <option value="604800">7 天</option>
+            <option value="2592000" selected>30 天</option>
+            <option value="7776000">90 天</option>
+            <option value="31536000">365 天</option>
+            <option value="0">永久</option>
+          </select>
+        </label>
+        <label>绑定设备 <input id="f-dev" placeholder="可选，粘贴设备号" /></label>
+        <label>备注 <input id="f-note" placeholder="如：内测 / 群友" /></label>
+        <button id="issueBtn">发卡</button>
+      </div>
+      <p class="muted">自定义卡密支持字母数字和 - _，服务端会统一转大写；批量发卡时自动加序号后缀。</p>
+    </section>
+
+    <section class="card">
+      <div class="row" style="justify-content:space-between">
+        <div class="row">
+          <label>搜索 <input id="q" placeholder="卡密 / 备注 / 设备号" /></label>
+          <label>状态
+            <select id="q-status">
+              <option value="">全部</option>
+              <option value="active">使用中</option>
+              <option value="issued">未激活</option>
+              <option value="expired">已过期</option>
+              <option value="disabled">已停用</option>
+            </select>
+          </label>
+        </div>
+        <button class="ghost" id="refresh">刷新</button>
+      </div>
+      <div style="overflow:auto; margin-top:10px">
+        <table>
+          <thead>
+            <tr>
+              <th>卡密</th><th>状态</th><th>到期</th><th>剩余</th><th>设备</th><th>备注</th><th style="min-width:330px">操作</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <p class="muted" id="count"></p>
+    </section>
+  </div>
+</main>
+
+<div id="toast"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let token = localStorage.getItem("zjsu_admin_token") || "";
+let cards = [];
+
+function toast(msg) {
+  const t = $("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(t._h);
+  t._h = setTimeout(() => t.classList.remove("show"), 2200);
+}
+
+async function api(path, opts = {}) {
+  const res = await fetch(path, {
+    ...opts,
+    headers: { "content-type": "application/json", "x-admin-token": token, ...(opts.headers || {}) },
+  });
+  if (res.status === 401) {
+    logout();
+    throw new Error("登录已失效");
+  }
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || data.ok === false) throw new Error(data.error || `HTTP ${res.status}`);
+  return data;
+}
+
+function fmtTime(ms) {
+  if (!ms) return "—";
+  const d = new Date(ms);
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+
+function fmtRemain(sec) {
+  if (sec === null || sec === undefined) return "永久";
+  if (sec <= 0) return "已到期";
+  const d = Math.floor(sec / 86400);
+  const h = Math.floor((sec % 86400) / 3600);
+  const m = Math.floor((sec % 3600) / 60);
+  if (d) return `${d}天${h}时`;
+  if (h) return `${h}时${m}分`;
+  return `${m}分`;
+}
+
+const STATUS_TEXT = { active: "使用中", issued: "未激活", expired: "已过期", disabled: "已停用" };
+
+function render() {
+  const q = $("q").value.trim().toLowerCase();
+  const st = $("q-status").value;
+  const now = Date.now();
+  const rows = cards.filter((c) => {
+    if (st && c.status !== st) return false;
+    if (!q) return true;
+    return (c.code + " " + (c.note || "") + " " + (c.device || "")).toLowerCase().includes(q);
+  });
+  $("tbody").innerHTML = rows
+    .map((c) => {
+      const remain = c.expiresAt ? Math.max(0, Math.floor((c.expiresAt - now) / 1000)) : null;
+      const dev = c.device ? `<code style="font-size:11px">${c.device.slice(0, 18)}…</code>` : '<span class="muted">未绑定</span>';
+      return `<tr>
+        <td><code>${c.code}</code><div class="muted">${fmtTime(c.issuedAt)}</div></td>
+        <td><span class="tag t-${c.status}">${STATUS_TEXT[c.status] || c.status}</span></td>
+        <td class="num">${c.expiresAt ? fmtTime(c.expiresAt) : (c.durationSec ? "激活后计时" : "永久")}</td>
+        <td class="num">${fmtRemain(remain)}</td>
+        <td>${dev}</td>
+        <td>${c.note || '<span class="muted">—</span>'}</td>
+        <td>
+          <button class="small ghost" data-act="add" data-code="${c.code}" data-sec="86400">+1天</button>
+          <button class="small ghost" data-act="add" data-code="${c.code}" data-sec="2592000">+30天</button>
+          <button class="small ghost" data-act="add" data-code="${c.code}" data-sec="-86400">-1天</button>
+          <button class="small ghost" data-act="bind" data-code="${c.code}">绑/解绑</button>
+          <button class="small ghost" data-act="toggle" data-code="${c.code}" data-disabled="${c.disabled ? 0 : 1}">${c.disabled ? "启用" : "停用"}</button>
+          <button class="small ghost" data-act="reset" data-code="${c.code}">重置</button>
+          <button class="small warn" data-act="del" data-code="${c.code}">删除</button>
+        </td>
+      </tr>`;
+    })
+    .join("");
+  $("count").textContent = `共 ${rows.length} / ${cards.length} 张`;
+}
+
+async function load() {
+  const data = await api("/admin/api/cards");
+  cards = data.cards;
+  render();
+}
+
+async function login() {
+  const res = await fetch("/admin/api/login", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ password: $("pwd").value }),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!data.ok) throw new Error(data.error || "登录失败");
+  token = data.token;
+  localStorage.setItem("zjsu_admin_token", token);
+  $("login").classList.add("hide");
+  $("panel").classList.remove("hide");
+  $("logout").classList.remove("hide");
+  $("stat").textContent = "已登录";
+  await load();
+  toast("登录成功");
+}
+
+function logout() {
+  token = "";
+  localStorage.removeItem("zjsu_admin_token");
+  $("login").classList.remove("hide");
+  $("panel").classList.add("hide");
+  $("logout").classList.add("hide");
+  $("stat").textContent = "未登录";
+}
+
+$("loginBtn").onclick = () => login().catch((e) => toast(e.message));
+$("logout").onclick = logout;
+$("refresh").onclick = () => load().catch((e) => toast(e.message));
+$("q").oninput = render;
+$("q-status").onchange = render;
+
+$("issueBtn").onclick = async () => {
+  const body = {
+    code: $("f-code").value.trim(),
+    count: Number($("f-count").value || 1),
+    durationSec: Number($("f-dur").value || 0),
+    device: $("f-dev").value.trim(),
+    note: $("f-note").value.trim(),
+  };
+  try {
+    const data = await api("/admin/api/cards", { method: "POST", body: JSON.stringify(body) });
+    toast(`已发 ${data.cards.length} 张：${data.cards.join(" ")}`);
+    $("f-code").value = "";
+    await load();
+  } catch (e) {
+    toast(e.message);
+  }
+};
+
+$("tbody").addEventListener("click", async (ev) => {
+  const btn = ev.target.closest("button[data-act]");
+  if (!btn) return;
+  const code = btn.dataset.code;
+  const act = btn.dataset.act;
+  const card = cards.find((c) => c.code === code);
+  try {
+    if (act === "add") {
+      const seconds = Number(btn.dataset.sec);
+      await api(`/admin/api/cards/${encodeURIComponent(code)}/addtime`, {
+        method: "POST",
+        body: JSON.stringify({ seconds }),
+      });
+      toast(`${code} ${seconds > 0 ? "+" : ""}${seconds / 86400} 天`);
+    } else if (act === "bind") {
+      const dev = prompt("输入要绑定的设备号，留空=解绑：", card?.device || "");
+      if (dev === null) return;
+      await api(`/admin/api/cards/${encodeURIComponent(code)}/bind`, {
+        method: "POST",
+        body: JSON.stringify({ device: dev.trim() }),
+      });
+      toast(dev.trim() ? "已绑定" : "已解绑");
+    } else if (act === "toggle") {
+      await api(`/admin/api/cards/${encodeURIComponent(code)}/toggle`, {
+        method: "POST",
+        body: JSON.stringify({ disabled: btn.dataset.disabled === "1" }),
+      });
+      toast("状态已切换");
+    } else if (act === "reset") {
+      if (!confirm(`重置 ${code} 的激活状态/绑定？`)) return;
+      await api(`/admin/api/cards/${encodeURIComponent(code)}/reset`, { method: "POST", body: "{}" });
+      toast("已重置");
+    } else if (act === "del") {
+      if (!confirm(`删除 ${code}？不可恢复`)) return;
+      await api(`/admin/api/cards/${encodeURIComponent(code)}`, { method: "DELETE" });
+      toast("已删除");
+    }
+    await load();
+  } catch (e) {
+    toast(e.message);
+  }
+});
+
+if (token) {
+  $("login").classList.add("hide");
+  $("panel").classList.remove("hide");
+  $("logout").classList.remove("hide");
+  $("stat").textContent = "已登录";
+  load().catch(() => logout());
+}
+</script>
+</body>
+</html>

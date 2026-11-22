@@ -1,0 +1,17 @@
+[Unit]
+Description=ZJsu license server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/zjsu-license
+Environment=PORT=8080
+Environment=DATA_DIR=/opt/zjsu-license/data
+Environment=ADMIN_PASSWORD=CHANGE_ME
+ExecStart=/usr/bin/node /opt/zjsu-license/server.js
+Restart=always
+RestartSec=3
+User=www-data
+
+[Install]
+WantedBy=multi-user.target

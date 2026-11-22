@@ -30,6 +30,9 @@ val defaultManagerName = if (isPrBuild) "钻酱SU" else "钻酱SU"
 val managerPackageName = project.findProperty("KSU_PACKAGE_NAME")?.toString() ?: defaultManagerPackageName
 val managerName = project.findProperty("KSU_NAME")?.toString() ?: defaultManagerName
 
+/** 卡密服务端地址，构建时由 -PLICENSE_SERVER 注入；为空表示此包不启用卡密校验。 */
+val licenseServerUrl: String = project.findProperty("LICENSE_SERVER")?.toString()?.trim().orEmpty()
+
 apksign {
     storeFileProperty = "KEYSTORE_FILE"
     storePasswordProperty = "KEYSTORE_PASSWORD"
@@ -152,6 +155,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("boolean", "IS_PR_BUILD", isPrBuild.toString())
+        buildConfigField("String", "LICENSE_SERVER", "\"$licenseServerUrl\"")
         resValue("string", "app_name", managerName)
 
         externalNativeBuild {

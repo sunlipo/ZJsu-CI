@@ -520,6 +520,7 @@ open class MainActivity : FragmentActivity() {
                                 MaterialTheme.colorScheme.surfaceContainer
                             }
                         ) { navDisplay() }
+                        me.weishu.kernelsu.ui.component.license.LicenseGate()
                     }
                     val prefs = remember {
                         ksuApp.getSharedPreferences("settings", Context.MODE_PRIVATE)
