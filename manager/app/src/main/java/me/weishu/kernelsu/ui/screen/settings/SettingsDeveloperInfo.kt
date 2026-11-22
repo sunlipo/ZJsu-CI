@@ -116,6 +116,11 @@ internal fun SettingsDeveloperInfo(showDialog: MutableState<Boolean>) {
                     style = MaterialTheme.typography.titleLargeEmphasized,
                 )
                 Text(
+                    text = "泪痕",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Text(
                     text = stringResource(R.string.developer_and_maintainer),
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.primary,
