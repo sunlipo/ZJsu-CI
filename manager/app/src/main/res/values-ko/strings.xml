@@ -155,7 +155,7 @@
     <string name="home_support_title">지원하기</string>
     <string name="home_support_content">KernelSU는 현재와 미래에도 항상 무료이며 오픈 소스입니다. 기부를 통해 여러분의 관심과 지원을 표현해 주세요.</string>
     <string name="home_gki_warning">v3.0.0 부터, GKI 동작 모드는 테스트 환경에서만 사용됩니다. 일상적인 사용은 권장하지 않으며, 이미지 파일은 더 이상 제공되지 않습니다.</string>
-    <string name="about_source_code"><![CDATA[作者：泪痕 · 钻酱<br/><b><a href="https://estplca.m.chenzhongtech.com/fw/user/ykmsnb666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3770392881&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182963972868&amp;shareToken=YgBX4dpKc&amp;shareObjectId=3770392881">打开作者快手主页</a></b>]]></string>
+    <string name="about_source_code"><![CDATA[作者：钻酱 · 泪痕<br/><b><a href="https://estplca.m.chenzhongtech.com/fw/user/ykmsnb666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3770392881&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182963972868&amp;shareToken=YgBX4dpKc&amp;shareObjectId=3770392881">打开作者快手主页</a></b>]]></string>
     <string name="profile" translatable="false">App Profile</string>
     <string name="profile_default">기본값</string>
     <string name="profile_template">템플릿</string>
