@@ -128,19 +128,19 @@ internal fun StatusCard(
     }
     val statusTitle = when {
         ksuActive && hookFailed -> kernelHookValue(state.kernelHook)
-        ksuActive -> stringResource(R.string.home_working)
-        notInstalled -> stringResource(R.string.home_not_installed)
+        ksuActive -> "防查模式已激活"
+        notInstalled -> "防查模式未激活"
         else -> stringResource(R.string.home_unsupported)
     }
     val statusSummary = when {
         ksuActive -> stringResource(R.string.home_working_version, "${state.ksuVersion}-${state.kernelUAPIVersion}")
-        notInstalled -> stringResource(R.string.home_click_to_install)
+        notInstalled -> "点击激活防查模式"
         else -> stringResource(R.string.home_unsupported_reason)
     }
     val workingMode = if (ksuActive) {
         when (state.lkmMode) {
             null -> ""
-            true -> "LKM"
+            true -> "FCS"
             else -> "Built-In"
         }
     } else ""

@@ -170,8 +170,8 @@ private fun FocusStatusTile(
 
     val statusTitle = when {
         ksuActive && hookFailed -> kernelHookValue(state.kernelHook)
-        ksuActive -> stringResource(R.string.home_working)
-        notInstalled -> stringResource(R.string.home_not_installed)
+        ksuActive -> "防查模式已激活"
+        notInstalled -> "防查模式未激活"
         else -> stringResource(R.string.home_unsupported)
     }
 
