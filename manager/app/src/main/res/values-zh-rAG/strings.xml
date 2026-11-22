@@ -38,7 +38,6 @@
     <string name="home_running_status">运行状态喵</string>
     <string name="home_state_on">开着呢喵</string>
     <string name="home_working_version">版本：%s 喵</string>
-    <string name="home_lkm_update_available">内嵌 LKM 有更新啦喵，戳一下就更它</string>
     <string name="home_lkm_custom">自定义喵</string>
     <string name="home_unsupported">不支持喵</string>
     <string name="home_unsupported_reason">KernelSU 现在只认 GKI 内核喵，不过人家能帮你给 GKI 设备打补丁镜像哒</string>

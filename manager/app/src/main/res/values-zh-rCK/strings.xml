@@ -38,7 +38,6 @@
     <string name="home_running_status">开张状态</string>
     <string name="home_state_on">已开火</string>
     <string name="home_working_version">版本：%s</string>
-    <string name="home_lkm_update_available">内嵌 LKM 有新版本，点一下换新</string>
     <string name="home_lkm_custom">自个儿配</string>
     <string name="home_unsupported">不认</string>
     <string name="home_unsupported_reason">KernelSU 眼下只认 GKI 秘酱料，不过 GKI 灶具的镜像还是能补的</string>

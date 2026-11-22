@@ -38,7 +38,6 @@
     <string name="home_running_status">运转状态</string>
     <string name="home_state_on">已点亮</string>
     <string name="home_working_version">版本：%s</string>
-    <string name="home_lkm_update_available">内嵌 LKM 有新的星辉，点击更新</string>
     <string name="home_lkm_custom">自定义</string>
     <string name="home_unsupported">不支持</string>
     <string name="home_unsupported_reason">KernelSU 现在只支持 GKI 心之契约，但你可以为 GKI 法器补丁镜像</string>

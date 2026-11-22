@@ -38,7 +38,6 @@
     <string name="home_running_status">Stan działania</string>
     <string name="home_state_on">Włączony</string>
     <string name="home_working_version">Wersja: %s</string>
-    <string name="home_lkm_update_available">Dostępna jest nowsza wersja wbudowanego LKM. Kliknij, aby zaktualizować.</string>
     <string name="home_lkm_custom">Własny</string>
     <string name="home_unsupported">Nieobsługiwany</string>
     <string name="home_unsupported_reason">KernelSU obsługuje obecnie tylko jądra GKI.</string>

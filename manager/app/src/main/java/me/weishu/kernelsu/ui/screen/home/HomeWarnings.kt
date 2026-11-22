@@ -54,13 +54,6 @@ internal fun HomeWarnings(
             onClick = actions::openManagerReleases,
         )
     }
-    if (state.showLkmUpdate && !previewing) {
-        WarningCard(
-            message = stringResource(R.string.home_lkm_update_available),
-            level = WarningLevel.Notice,
-            onClick = actions.onInstallClick,
-        )
-    }
     if (state.showRootRecovering) {
         WarningCard(stringResource(id = R.string.root_recovering), level = WarningLevel.Notice)
     }

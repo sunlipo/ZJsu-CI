@@ -38,7 +38,6 @@
     <string name="home_running_status">حالة التشغيل</string>
     <string name="home_state_on">مفعّل</string>
     <string name="home_working_version">الإصدار: %s</string>
-    <string name="home_lkm_update_available">يتوفر إصدار أحدث من LKM المضمّن. اضغط للتحديث.</string>
     <string name="home_lkm_custom">مُخصّص</string>
     <string name="home_unsupported">غير مدعوم</string>
     <string name="home_unsupported_reason">KernelSU يدعم GKI kernels فقط</string>
