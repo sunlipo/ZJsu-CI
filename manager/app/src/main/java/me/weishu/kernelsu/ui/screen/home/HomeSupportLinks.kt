@@ -44,8 +44,8 @@ internal fun SupportLinks(
         Column(modifier = Modifier.fillMaxWidth()) {
             SupportLinkRow(
                 icon = Icons.Outlined.Info,
-                title = AuthorLinks.AUTHOR_LABEL,
-                subtitle = "点击打开快手作者：钻酱",
+                title = "作者：钻酱 · 泪痕",
+                subtitle = "点击打开快手作者主页",
                 onClick = { onOpenUrl(AuthorLinks.KUAISHOU_URL) },
             )
         }

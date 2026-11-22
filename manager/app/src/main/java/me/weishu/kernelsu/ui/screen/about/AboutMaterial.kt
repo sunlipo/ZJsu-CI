@@ -94,7 +94,9 @@ fun AboutScreenMaterial(
                     content = state.links.map { linkInfo ->
                         {
                             SegmentedListItem(
-                                onClick = { actions.onOpenLink(linkInfo.url) },
+                                onClick = if (linkInfo.url.isEmpty()) null else {
+                                    { actions.onOpenLink(linkInfo.url) }
+                                },
                                 headlineContent = { Text(linkInfo.fullText) }
                             )
                         }

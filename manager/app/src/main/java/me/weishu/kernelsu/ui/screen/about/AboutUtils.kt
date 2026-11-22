@@ -17,12 +17,16 @@ fun extractLinks(html: String): List<LinkInfo> {
 
     for (line in lines) {
         val spanned: Spanned = Html.fromHtml(line, Html.FROM_HTML_MODE_LEGACY)
-        val spans = spanned.getSpans(0, spanned.length, URLSpan::class.java)
         val text = spanned.toString().trim()
-
-        for (span in spans) {
-            val url = span.url
-            result.add(LinkInfo(text, url))
+        if (text.isEmpty()) continue
+        val spans = spanned.getSpans(0, spanned.length, URLSpan::class.java)
+        if (spans.isEmpty()) {
+            // Plain author/credit lines (no link) still render as rows.
+            result.add(LinkInfo(text, ""))
+        } else {
+            for (span in spans) {
+                result.add(LinkInfo(text, span.url))
+            }
         }
     }
     return result
