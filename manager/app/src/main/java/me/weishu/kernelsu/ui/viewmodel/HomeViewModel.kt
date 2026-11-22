@@ -188,11 +188,6 @@ class HomeViewModel(
                     rootStatus = capability.rootStatus,
                 )
             }
-            if (baseState.checkUpdateEnabled) {
-                val latestVersionInfo = withContext(Dispatchers.IO) { checkNewVersion() }
-                if (token != refreshToken) return@launch
-                _uiState.update { it.copy(latestVersionInfo = latestVersionInfo) }
-            }
         }
     }
 

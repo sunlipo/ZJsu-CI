@@ -29,9 +29,6 @@ internal fun HomeWarnings(
     actions: HomeActions,
 ) {
     val previewing = LocalThemePreview.current != null
-    if (state.checkUpdateEnabled) {
-        UpdateCard(state = state, actions = actions)
-    }
     if (state.showManagerPrBuildWarning) {
         WarningCard(stringResource(id = R.string.home_pr_build_warning), level = WarningLevel.Notice)
     } else if (state.showKernelPrBuildWarning) {
@@ -72,42 +69,6 @@ internal fun HomeWarnings(
             message = stringResource(id = R.string.grant_root_failed),
             onClick = actions.onRetryRoot,
         )
-    }
-}
-
-@Composable
-private fun UpdateCard(
-    state: HomeUiState,
-    actions: HomeActions,
-) {
-    val newVersion = state.latestVersionInfo
-    val title = stringResource(id = R.string.module_changelog)
-    val updateText = stringResource(id = R.string.module_update)
-
-    AnimatedVisibility(
-        visible = state.hasUpdate,
-        enter = fadeIn() + expandVertically(),
-        exit = shrinkVertically() + fadeOut()
-    ) {
-        val updateDialog = rememberConfirmDialog(onConfirm = { actions.onOpenUrl(newVersion.downloadUrl) })
-        WarningCard(
-            message = stringResource(
-                id = R.string.new_version_available,
-                newVersion.versionName.ifEmpty { newVersion.versionCode.toString() },
-            ),
-            level = WarningLevel.Notice
-        ) {
-            if (newVersion.changelog.isEmpty()) {
-                actions.onOpenUrl(newVersion.downloadUrl)
-            } else {
-                updateDialog.showConfirm(
-                    title = title,
-                    content = newVersion.changelog,
-                    markdown = true,
-                    confirm = updateText
-                )
-            }
-        }
     }
 }
 

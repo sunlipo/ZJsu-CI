@@ -207,24 +207,6 @@ private fun hubRow(
 val settingsSearchIndex: List<SettingsSearchEntry> = buildList {
     // General
     add(
-        SettingsCategory.GENERAL.row(
-            id = "general.check_update",
-            titleRes = R.string.settings_check_update,
-            summaryRes = R.string.settings_check_update_summary,
-            icon = Icons.Filled.SystemUpdate,
-            aliases = listOf("update", "ota", "release"),
-        )
-    )
-    add(
-        SettingsCategory.GENERAL.row(
-            id = "general.check_module_update",
-            titleRes = R.string.settings_module_check_update,
-            summaryRes = R.string.settings_check_update_summary,
-            icon = Icons.Filled.SystemUpdateAlt,
-            aliases = listOf("update", "module", "repo"),
-        )
-    )
-    add(
         SettingsCategory.GENERAL.page(
             id = "general.profile_template",
             titleRes = R.string.settings_profile_template,
