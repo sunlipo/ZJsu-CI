@@ -223,7 +223,7 @@ private fun FocusStatusTile(
             value = if (ksuActive) {
                 "${state.ksuVersion}-${state.kernelUAPIVersion}"
             } else {
-                stringResource(R.string.home_not_installed)
+                "防查模式未激活"
             },
         )
         statusStateTexts(state).forEach { (label, value) ->
