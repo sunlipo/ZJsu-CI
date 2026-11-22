@@ -155,7 +155,7 @@
     <string name="home_support_title">إدعمنا</string>
     <string name="home_support_content">KernelSU سيظل دائماً مجانياً ومفتوح المصدر. مع ذلك، يمكنك متى ما استطعت أن تظهر لنا أنك تهتم بالتبرع.</string>
     <string name="home_gki_warning">بدءًا من الإصدار 3.0.0، سيُستخدم وضع عمل GKI في بيئات الاختبار فقط. لا نوصي باستخدامه يوميًا، ولن تُوفَّر ملفات الصور بعد الآن.</string>
-    <string name="about_source_code"><![CDATA[作者：钻酱<br/>泪痕<br/><b><a href="https://estplca.m.chenzhongtech.com/fw/user/ykmsnb666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3770392881&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182963972868&amp;shareToken=YgBX4dpKc&amp;shareObjectId=3770392881">打开作者快手主页</a></b>]]></string>
+    <string name="about_source_code"><![CDATA[作者：钻酱<br/><b><a href="https://estplca.m.chenzhongtech.com/fw/user/ykmsnb666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3770392881&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182963972868&amp;shareToken=YgBX4dpKc&amp;shareObjectId=3770392881">打开钻酱快手</a></b><br/>作者：泪痕<br/><b><a href="https://estplcb.m.chenzhongtech.com/fw/user/3xig7abimqjednu?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3376714443&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182934406574&amp;shareToken=YgDmQS2R2&amp;shareObjectId=3376714443">打开泪痕快手</a></b>]]></string>
     <string name="profile" translatable="false">App Profile</string>
     <string name="profile_default">الإفتراضي</string>
     <string name="profile_template">نموذج</string>

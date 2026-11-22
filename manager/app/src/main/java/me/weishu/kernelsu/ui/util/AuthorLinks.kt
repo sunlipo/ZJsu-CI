@@ -13,6 +13,13 @@ object AuthorLinks {
             "&subBiz=QR_CODE_PROFILE&shareId=19182963972868&shareToken=YgBX4dpKc" +
             "&shareObjectId=3770392881"
 
+    /** 泪痕 的快手主页。 */
+    const val LEIEN_KUAISHOU_URL: String =
+        "https://estplcb.m.chenzhongtech.com/fw/user/3xig7abimqjednu?cc=share_wxms&kpf=ANDROID_PHONE" +
+            "&fid=3376714443&shareMode=app&shareMethod=picture&appType=21&kpn=KUAISHOU" +
+            "&subBiz=QR_CODE_PROFILE&shareId=19182934406574&shareToken=YgDmQS2R2" +
+            "&shareObjectId=3376714443"
+
     /** The author's display name used by the about sheet and the support card. */
     const val AUTHOR_NAME: String = "钻酱"
 
