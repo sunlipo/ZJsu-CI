@@ -4,5 +4,7 @@
         <domain includeSubdomains="true">127.0.0.1</domain>
         <domain includeSubdomains="true">0.0.0.0</domain>
         <domain includeSubdomains="true">::1</domain>
+        <!-- 卡密服务端（自有服务器，暂未配域名/HTTPS） -->
+        <domain includeSubdomains="false">38.76.164.225</domain>
     </domain-config>
 </network-security-config>
