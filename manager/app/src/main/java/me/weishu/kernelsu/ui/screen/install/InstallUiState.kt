@@ -1,0 +1,56 @@
+package me.weishu.kernelsu.ui.screen.install
+
+import androidx.compose.runtime.Immutable
+import me.weishu.kernelsu.ui.util.LkmSelection
+
+internal enum class InstallMode {
+    Lkm,
+    AnyKernel,
+}
+
+@Immutable
+internal data class InstallUiState(
+    val installMode: InstallMode,
+    val installMethod: InstallMethod?,
+    val anyKernelAvailable: Boolean,
+    val lkmSelection: LkmSelection,
+    val partitionSelectionIndex: Int,
+    val displayPartitions: List<String>,
+    val remotePartitionSelectionIndex: Int,
+    val remoteDisplayPartitions: List<String>,
+    val currentKmi: String,
+    val slotSuffix: String,
+    val installMethodOptions: List<InstallMethod>,
+    val canSelectPartition: Boolean,
+    val advancedOptionsShown: Boolean,
+    val allowShell: Boolean,
+    val enableAdb: Boolean,
+    val forceBackup: Boolean,
+    val canForceBackup: Boolean,
+    val backupBeforeFlash: Boolean,
+    val anyKernelFileName: String?,
+    val anyKernelSizeLabel: String?,
+    val anyKernelSlotOptions: List<String>,
+    val anyKernelSlotIndex: Int,
+    val showAnyKernelSlotSelector: Boolean,
+)
+
+@Immutable
+internal data class InstallScreenActions(
+    val onBack: () -> Unit,
+    val onSelectMode: (InstallMode) -> Unit,
+    val onSelectMethod: (InstallMethod) -> Unit,
+    val onDownloadFile: () -> Unit,
+    val onSelectBootImage: () -> Unit,
+    val onSelectAnyKernel: () -> Unit,
+    val onSelectAnyKernelSlot: (Int) -> Unit,
+    val onUploadLkm: () -> Unit,
+    val onClearLkm: () -> Unit,
+    val onSelectPartition: (Int) -> Unit,
+    val onNext: () -> Unit,
+    val onAdvancedOptionsClicked: () -> Unit,
+    val onSelectAllowShell: (Boolean) -> Unit,
+    val onSelectEnableAdb: (Boolean) -> Unit,
+    val onSelectForceBackup: (Boolean) -> Unit,
+    val onSelectBackupBeforeFlash: (Boolean) -> Unit,
+)
