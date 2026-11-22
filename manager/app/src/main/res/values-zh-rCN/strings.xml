@@ -151,7 +151,7 @@
     <string name="home_support_title">支持开发</string>
     <string name="home_support_content">KernelSU 将保持免费开源，向开发者捐赠以表示支持</string>
     <string name="home_gki_warning">自 v3.0.0 起 GKI 工作模式将仅用于测试环境，我们不建议用于日常使用，也不再提供镜像文件</string>
-    <string name="about_source_code"><![CDATA[作者：钻酱 · 泪痕<br/><b><a href="https://estplca.m.chenzhongtech.com/fw/user/ykmsnb666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3770392881&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182963972868&amp;shareToken=YgBX4dpKc&amp;shareObjectId=3770392881">打开作者快手主页</a></b>]]></string>
+    <string name="about_source_code"><![CDATA[作者：钻酱<br/>泪痕<br/><b><a href="https://estplca.m.chenzhongtech.com/fw/user/ykmsnb666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3770392881&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182963972868&amp;shareToken=YgBX4dpKc&amp;shareObjectId=3770392881">打开作者快手主页</a></b>]]></string>
     <string name="profile_default">默认</string>
     <string name="profile_template">模板</string>
     <string name="profile_custom">自定义</string>
