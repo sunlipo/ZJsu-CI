@@ -112,11 +112,11 @@ internal fun SettingsDeveloperInfo(showDialog: MutableState<Boolean>) {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text(
-                    text = "钻酱",
+                    text = "泪痕",
                     style = MaterialTheme.typography.titleLargeEmphasized,
                 )
                 Text(
-                    text = "泪痕",
+                    text = "钻酱",
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

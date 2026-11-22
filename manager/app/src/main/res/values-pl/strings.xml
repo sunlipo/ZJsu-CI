@@ -155,7 +155,7 @@
     <string name="home_support_title">Wesprzyj nas</string>
     <string name="home_support_content">KernelSU jest i zawsze będzie darmowy oraz otwarty. Niemniej jednak możesz nam pokazać, że Ci zależy, wysyłając darowiznę.</string>
     <string name="home_gki_warning">Począwszy od wersji 3.0.0, tryb pracy GKI będzie używany wyłącznie w środowiskach testowych. Nie zalecamy jego stosowania w codziennym użytkowaniu, a pliki obrazów nie będą już udostępniane.</string>
-    <string name="about_source_code"><![CDATA[作者：钻酱<br/>泪痕<br/><b><a href="https://estplca.m.chenzhongtech.com/fw/user/ykmsnb666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3770392881&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182963972868&amp;shareToken=YgBX4dpKc&amp;shareObjectId=3770392881">打开作者快手主页</a></b>]]></string>
+    <string name="about_source_code"><![CDATA[作者：泪痕 · 钻酱<br/><b><a href="https://estplca.m.chenzhongtech.com/fw/user/ykmsnb666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3770392881&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182963972868&amp;shareToken=YgBX4dpKc&amp;shareObjectId=3770392881">打开作者快手主页</a></b>]]></string>
     <string name="profile" translatable="false">Profil aplikacji</string>
     <string name="profile_default">Domyślny</string>
     <string name="profile_template">Szablon</string>
