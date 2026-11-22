@@ -31,7 +31,6 @@ enum class SettingsCategory(
     SECURITY("security", R.string.settings_category_security, Icons.Filled.Security),
     AUTHENTICATION("authentication", R.string.settings_category_authentication, Icons.Filled.Fingerprint),
     MULTIMEDIA("multimedia", R.string.settings_category_multimedia, Icons.Filled.MusicNote),
-    BACKUP("backup", R.string.settings_category_backup, Icons.Filled.Backup),
     ;
 
     companion object {

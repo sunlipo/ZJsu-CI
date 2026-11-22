@@ -111,13 +111,13 @@ internal object ThemeValidation {
         if (json.has(ThemeSettingsMapping.KEY_COLOR) &&
             json.getInt(ThemeSettingsMapping.KEY_COLOR) !in ThemeSettingsMapping.colors.values &&
             !json.optBoolean("useSystemDynamicColor")) {
-            warnings += "FinaSU custom seed has no FP catalog entry; FP uses the exported customColor fallback"
+            warnings += "钻酱SU custom seed has no FP catalog entry; FP uses the exported customColor fallback"
         }
         if (json.optString("homeLayoutStyle") in setOf("default", "sign")) {
-            warnings += "${json.getString("homeLayoutStyle")} maps to FinaSU circle layout; original layout token is preserved on export"
+            warnings += "${json.getString("homeLayoutStyle")} maps to 钻酱SU circle layout; original layout token is preserved on export"
         }
         if (json.optString("customColor") == "ink_wash") {
-            warnings += "FinaSU retains its fixed semantic error palette for ink_wash"
+            warnings += "钻酱SU retains its fixed semantic error palette for ink_wash"
         }
         fun stem(name: String) = name.substringBefore('.')
         files.keys.groupBy(::stem).filterValues { it.size > 1 }.keys.forEach {
@@ -154,7 +154,7 @@ internal object ThemeValidation {
             }
             icons?.keys()?.forEach { key ->
                 if (!files.containsKey(icons.optString(key))) warnings += "Missing navigation icon: $key; current icon retained"
-                if (key !in BottomBarDestination.entries.map { it.themeKey }) warnings += "Navigation destination $key has no FinaSU page; resource retained"
+                if (key !in BottomBarDestination.entries.map { it.themeKey }) warnings += "Navigation destination $key has no 钻酱SU page; resource retained"
             }
         }
         // FP copies resources without probing every image, font and media file. Unknown/unused

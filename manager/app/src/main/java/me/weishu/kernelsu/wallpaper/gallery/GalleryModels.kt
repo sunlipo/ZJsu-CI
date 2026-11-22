@@ -61,6 +61,6 @@ data class WallpaperItem(
                 .substringBefore('?')
                 .substringAfterLast('.', "webp")
                 .ifBlank { "webp" }
-            return "FinaSU_${deviceKey}_${id}.$ext"
+            return "ZJsu_${deviceKey}_${id}.$ext"
         }
 }

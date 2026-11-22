@@ -10,7 +10,7 @@ package me.weishu.kernelsu.data.backup.local
 object LocalBackupLayout {
 
     /** Folder created under the public Downloads directory that holds every local backup. */
-    const val ROOT_DIR_NAME = "FinaSU"
+    const val ROOT_DIR_NAME = "ZJsu"
 
     /** MediaStore `RELATIVE_PATH` of the backup root, e.g. `Download/FinaSU`. */
     const val MEDIA_RELATIVE_ROOT = "Download/$ROOT_DIR_NAME"

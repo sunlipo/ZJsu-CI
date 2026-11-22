@@ -6,7 +6,7 @@
     <string name="install_anykernel">炼化 AnyKernel3 ZIP</string>
     <string name="install_anykernel_summary">以当前仙槽或未使用的 A/B 仙槽运转可信之道核炼器，需 root 之权。</string>
     <string name="install_anykernel_page_hint">此外部 ZIP 将以 root 运转，所书分区由炼器之符裁定；唯用确认相容本仙器之卷宗。</string>
-    <string name="install_anykernel_warning">此 ZIP 将以 root 运转，或改多方分区。所书分区与仙槽皆由炼器之符决定，FinaSU 不夺仙槽，亦不更新 ksud。炼化功成不保可启，败陨亦可能已留残迹。现有仙躯镜像之拓印未必涵盖此番改动。请先验仙器之相容，备下回滚之镜像，再行继续。</string>
+    <string name="install_anykernel_warning">此 ZIP 将以 root 运转，或改多方分区。所书分区与仙槽皆由炼器之符决定，钻酱SU 不夺仙槽，亦不更新 ksud。炼化功成不保可启，败陨亦可能已留残迹。现有仙躯镜像之拓印未必涵盖此番改动。请先验仙器之相容，备下回滚之镜像，再行继续。</string>
     <string name="install_anykernel_root_required">炼化 AnyKernel3 需 root 之权。</string>
     <string name="install_anykernel_read_failed">无法读取 AnyKernel3 ZIP。</string>
     <string name="home">仙府主殿</string>
@@ -14,7 +14,7 @@
     <string name="home_click_to_install">点触引仙入道</string>
     <string name="home_working">闭关修炼中</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">钻酱SU</string>
     <string name="home_tile_system">天道信息</string>
     <string name="home_tile_device">仙器</string>
     <string name="home_tile_storage">宝库</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">参悟 KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/zh_CN/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">探 KernelSU 引仙入道之法，明炼化仙符之术。</string>
-    <string name="home_learn_finasu">参悟 FinaSU</string>
+    <string name="home_learn_finasu">参悟 钻酱SU</string>
     <string name="home_learn_finasu_url">https://estplca.m.chenzhongtech.com/fw/user/ykmsnb666?cc=share_wxms&amp;kpf=ANDROID_PHONE&amp;fid=3770392881&amp;shareMode=app&amp;shareMethod=picture&amp;appType=21&amp;kpn=KUAISHOU&amp;subBiz=QR_CODE_PROFILE&amp;shareId=19182963972868&amp;shareToken=YgBX4dpKc&amp;shareObjectId=3770392881</string>
-    <string name="home_click_to_learn_finasu">探 FinaSU 引仙入道之法，明炼化仙符之术。</string>
+    <string name="home_click_to_learn_finasu">探 钻酱SU 引仙入道之法，明炼化仙符之术。</string>
     <string name="home_support_title">道力支持</string>
     <string name="home_support_content">KernelSU 恒久免费开源，向道门捐赠以表道心。</string>
     <string name="home_gki_warning">自 v3.0.0 起，GKI 修炼模式唯用于试炼之境；吾等不荐日常修持，亦不复供镜像卷宗。</string>
@@ -281,7 +281,7 @@
     <string name="settings_sucompat_summary">许经由 /system/bin/su 取得 Root 之权，唯于新起之进程。</string>
     <string name="settings_kernel_umount">道核卸符</string>
     <string name="settings_kernel_umount_summary">于道核层为所需凡器卸除仙符</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide" translatable="false">Hide</string>
     <string name="settings_kernel_umount_unknown">未能勘验功能是否可施矣</string>
     <string name="settings_kernel_umount_values">今：%1$s · 轮转后：%2$s矣</string>
     <string name="settings_kernel_umount_on">开启矣</string>
@@ -485,7 +485,7 @@
     <string name="settings_section_layout">格局</string>
     <string name="settings_support_links">首页底下道牌</string>
     <string name="settings_support_links_summary">择首页底端所现之道。</string>
-    <string name="settings_support_links_finasu">参悟 FinaSU</string>
+    <string name="settings_support_links_finasu">参悟 钻酱SU</string>
     <string name="settings_support_links_legacy">道力支持与 KernelSU</string>
     <string name="settings_support_links_hidden">隐去</string>
     <string name="settings_support_links_custom">自定</string>
@@ -682,11 +682,11 @@
     <string name="download_install">炼化</string>
     <string name="settings_finasu_hide_summary">一定程度上隐匿 Bootloader 解锁之态</string>
     <string name="settings_finasu_hide_reboot_hint">重启后复归真值</string>
-    <string name="settings_finasu_hide_failed">易 FinaSU Hide 败陨</string>
+    <string name="settings_finasu_hide_failed">易 Hide 败陨</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">以 Root 之权运转 adbd 守护之灵</string>
     <string name="feature_external_changes_title">共享设符已被外部修改矣</string>
-    <string name="feature_external_changes_summary">外部模块或掌道者在 FinaSU 施行已留存设符后修改了这些运行值。FinaSU 不会自行覆盖矣。</string>
+    <string name="feature_external_changes_summary">外部模块或掌道者在 钻酱SU 施行已留存设符后修改了这些运行值。钻酱SU 不会自行覆盖矣。</string>
     <string name="feature_external_value_on">开启矣</string>
     <string name="feature_external_value_off">关闭矣</string>
     <string name="menu_sort">排序</string>
@@ -882,7 +882,7 @@
     <string name="backup_section_content">封存何物</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">本域洞府</string>
-    <string name="backup_local_summary">藏于 Download/FinaSU</string>
+    <string name="backup_local_summary">藏于 Download/钻酱SU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">开启藏经洞</string>
     <string name="backup_modules">仙符</string>
@@ -1099,11 +1099,11 @@
     <string name="module_preinit_error">预启同步未成，仍守旧制</string>
     <string name="module_preinit_bootloop">屡启未成，预启暂歇</string>
     <string name="module_preinit_unsupported">此内核或加载之法不容预启</string>
-    <string name="guide_welcome_title">道友，欢迎踏入 FinaSU</string>
+    <string name="guide_welcome_title">道友，欢迎踏入 钻酱SU</string>
     <string name="guide_welcome_desc">以内核之力执掌 Root，Zygisk 道法、Shizuku API 灵台、VFS 路径挪移与模块悬置法阵，皆已炼入其中。</string>
     <string name="guide_repo_title">GitHub 开源道藏</string>
     <string name="guide_repo_desc">源码、问题禀报与版本谕示，皆录于道藏之中。</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/sunlipo/ZJsu</string>
     <string name="guide_repo_action">开启道藏</string>
     <string name="guide_features_title">内置道法</string>
     <string name="guide_features_desc">四道引擎已炼入管理器，无须另寻模块法器。</string>

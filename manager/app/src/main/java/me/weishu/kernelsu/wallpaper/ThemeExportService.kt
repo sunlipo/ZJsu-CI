@@ -13,7 +13,7 @@ import java.io.File
 
 object ThemeExportService {
     /** Public folder, relative to the shared Downloads directory, where exported themes land. */
-    val DOWNLOAD_DIR: String = "${Environment.DIRECTORY_DOWNLOADS}/FinaSU/Themes"
+    val DOWNLOAD_DIR: String = "${Environment.DIRECTORY_DOWNLOADS}/ZJsu/Themes"
 
     /**
      * Writes [metadata]'s theme package into the shared Downloads collection under [DOWNLOAD_DIR].

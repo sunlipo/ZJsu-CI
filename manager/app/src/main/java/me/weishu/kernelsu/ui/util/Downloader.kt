@@ -61,7 +61,7 @@ internal suspend fun isDownloadAvailable(uri: Uri): Boolean = withContext(Dispat
  * build against KernelSU's releases, so once upstream's version code overtook FinaSU's the manager
  * would have offered the KernelSU APK as a FinaSU update.
  */
-private const val MANAGER_RELEASES_API = "https://api.github.com/repos/LyraVoid/FinaSU/releases/latest"
+private const val MANAGER_RELEASES_API = "https://api.github.com/repos/sunlipo/ZJsu/releases/latest"
 
 /** Release assets are named `<manager>_v<versionName>_<versionCode>-<buildType>.apk`. */
 private val RELEASE_ASSET_NAME = Regex("v(.+?)_(\\d+)")

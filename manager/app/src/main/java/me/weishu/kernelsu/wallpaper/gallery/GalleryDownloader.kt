@@ -52,7 +52,7 @@ object WallpaperDownloader {
         val values = ContentValues().apply {
             put(MediaStore.MediaColumns.DISPLAY_NAME, fileName)
             put(MediaStore.MediaColumns.MIME_TYPE, mimeOf(fileName))
-            put(MediaStore.MediaColumns.RELATIVE_PATH, "${Environment.DIRECTORY_PICTURES}/FinaSU")
+            put(MediaStore.MediaColumns.RELATIVE_PATH, "${Environment.DIRECTORY_PICTURES}/ZJsu")
             put(MediaStore.MediaColumns.IS_PENDING, 1)
         }
         val resolver = context.contentResolver
@@ -62,12 +62,12 @@ object WallpaperDownloader {
         values.clear()
         values.put(MediaStore.MediaColumns.IS_PENDING, 0)
         resolver.update(uri, values, null, null)
-        return Result.Success(uri, "Pictures/FinaSU")
+        return Result.Success(uri, "Pictures/ZJsu")
     }
 
     private fun saveToAppPictures(context: Context, fileName: String, bytes: ByteArray): Result {
         val root = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES) ?: context.filesDir
-        val dir = File(root, "FinaSU").apply { if (!exists()) mkdirs() }
+        val dir = File(root, "ZJsu").apply { if (!exists()) mkdirs() }
         val file = File(dir, fileName)
         file.writeBytes(bytes)
         return Result.Success(Uri.fromFile(file), file.parent ?: "app pictures")
