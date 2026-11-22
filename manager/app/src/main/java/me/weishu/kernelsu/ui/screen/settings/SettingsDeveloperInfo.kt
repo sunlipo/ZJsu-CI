@@ -129,7 +129,7 @@ internal fun SettingsDeveloperInfo(showDialog: MutableState<Boolean>) {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text(
-                    text = "\"快手：钻酱｜钻酱su 官方发布\"",
+                    text = "\"快手：钻酱｜钻酱SU 官方发布\"",
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f),
